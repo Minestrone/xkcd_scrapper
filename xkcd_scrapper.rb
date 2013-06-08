@@ -4,10 +4,10 @@ require 'open-uri'
 URL = 'http://www.xkcd.com/archive'
 
 # Initialize and grab URL
-agent = Mechanize.new
-archive = agent.get(URL)
-cname  = Array.new
-cnumber = Array.new
+agent = Mechanize.new     # New Mechanize object
+archive = agent.get(URL)  # Mechanize objects gets XKCD url
+cname  = Array.new        # Creating new array for comic name
+cnumber = Array.new       # Creating new array for comic number
 
 # get XPath to comic number
 archive.search('//div[@id="middleContainer"]/a/@href').each do |path|
